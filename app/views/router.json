@@ -1,0 +1,6 @@
+{
+  "div": {
+    "class": "@props.css.router",
+    "children": "@component.@state.route.component"
+  }
+}

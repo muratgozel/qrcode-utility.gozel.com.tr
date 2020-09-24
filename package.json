@@ -1,0 +1,23 @@
+{
+  "name": "qrcode-utility.gozel.com.tr",
+  "version": "20.9.1",
+  "description": "Generate a qr code in various formats.",
+  "main": "build/index.js",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "@frondjs/frond": "^4.1.0",
+    "animejs": "^3.2.0",
+    "basekits": "^1.1.0",
+    "csp-dev": "^1.0.1",
+    "dayjs": "^1.8.36",
+    "file-saver": "^2.0.2",
+    "fontfaceobserver": "^2.1.0",
+    "lighthouse-analytics": "^1.0.6",
+    "local-storage-pro": "^1.1.1",
+    "metapatcher": "^2.0.5",
+    "regionist": "^1.0.0"
+  },
+  "devDependencies": {
+    "convict": "^6.0.0"
+  }
+}

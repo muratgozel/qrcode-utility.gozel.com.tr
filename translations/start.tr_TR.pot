@@ -1,0 +1,15 @@
+# Translation of start component into tr_TR.
+# This file created automatically by Monodrom, 2020
+msgid ""
+msgstr ""
+"Project-Id-Version: qrcode-utility.gozel.com.tr 20.9.1\n"
+"POT-Creation-Date: 2020-09-24T23:11:50.091Z\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Hoşgeldiniz. Başlamak için menü simgesine tıklayın."
+msgstr ""
+

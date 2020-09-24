@@ -1,0 +1,12 @@
+{
+  "div": {
+    "id": "app",
+    "class": "@props.css.app",
+    "children": [
+      {
+        "case @state.ready = true": "@component.router",
+        "otherwise": "@component.loadingbar"
+      }
+    ]
+  }
+}

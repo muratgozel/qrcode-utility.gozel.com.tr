@@ -1,0 +1,57 @@
+# Translation of vcard component into tr_TR.
+# This file created automatically by Monodrom, 2020
+msgid ""
+msgstr ""
+"Project-Id-Version: qrcode-utility.gozel.com.tr 20.9.1\n"
+"POT-Creation-Date: 2020-09-24T23:11:50.091Z\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "vCard Karekodu Oluştur"
+msgstr ""
+
+msgid "vCard, standart haline gelmiş, bir çok telefon/cihaz tarafından tanınan, irtibat kişisi tanımlamak için kullanılan bir dosya formatıdır. vCard formatındaki dosya, aynı zamanda karekodun içine gömülebilir ve karekodu okuyan cihaz, kullanıcısına kişiyi rehbere eklemek isteyip istemediğini sorar."
+msgstr ""
+
+msgid "Temel Bilgiler"
+msgstr ""
+
+msgid "Ad"
+msgstr ""
+
+msgid "Soyad"
+msgstr ""
+
+msgid "Telefon Numarası"
+msgstr ""
+
+msgid "Diğer Ayrıntılar"
+msgstr ""
+
+msgid "Dikkat: "
+msgstr ""
+
+msgid "Ayrıntı girdikçe karekod görseli karmaşıklaşır ve cihazlar tarafından okunabilirliği azalır. Karekod görselini büyük ölçülerde kullanmanız gerekebilir. Örneğin bu karekodu kartvizitinizde kullanacaksanız ayrıntı bilgiler girmeniz "
+msgstr ""
+
+msgid "önerilmez."
+msgstr ""
+
+msgid "E-posta"
+msgstr ""
+
+msgid "Şirket Adı"
+msgstr ""
+
+msgid "İş Adresi"
+msgstr ""
+
+msgid "Karekodu Oluştur"
+msgstr ""
+
+msgid "İndir (SVG)"
+msgstr ""
+

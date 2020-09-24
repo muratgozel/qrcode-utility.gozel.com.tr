@@ -1,0 +1,40 @@
+{
+  "app": {
+    "no-print": "a__22__7a93kv",
+    "app": "a__22__22ox",
+    "router": "a__22__fast6f",
+    "header": "a__22__k742nn",
+    "left": "a__22__1z407",
+    "logo-link": "a__22__qknqck",
+    "app-name": "a__22__ijp1h3",
+    "right": "a__22__1sls7w",
+    "burger-menu-link": "a__22__8oxkts",
+    "burger-menu": "a__22__7jzg6v",
+    "section": "a__22__wl13vp",
+    "heading": "a__22__d5iade",
+    "item": "a__22__1xi4z",
+    "site-section": "a__22__urqgrj",
+    "introduction": "a__22__pgmuje",
+    "footer": "a__22__kzg3tx",
+    "footer-left": "a__22__heexvd",
+    "footer-right": "a__22__sqnxqu",
+    "form-wrapper": "a__22__c26b9m",
+    "input-group": "a__22__n910ec",
+    "input": "a__22__1nr0sq",
+    "input-group-row": "a__22__boomnr",
+    "long-input": "a__22__t6o8g7",
+    "form-actions": "a__22__xjgft8",
+    "form-actions-left": "a__22__s42ugw",
+    "qrcode-wrapper": "a__22__58l9o",
+    "qrcode-vector": "a__22__fd36g2",
+    "qrcode-actions": "a__22__pa8pmm"
+  },
+  "skeleton": {},
+  "critical": {
+    "text-bold": "c__wa__hxjr2z",
+    "text-italic": "c__wa__vbyx1s",
+    "label": "c__wa__1p5sz8",
+    "rounded": "c__wa__mwveel",
+    "tooltip-error": "c__wa__kb3r9a"
+  }
+}

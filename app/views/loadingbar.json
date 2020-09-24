@@ -1,0 +1,17 @@
+{
+  "div": {
+    "id": "loadingbar",
+    "class": {
+      "case @state.disabled = true": ["@props.css.wrapper", "@props.css.disabled"],
+      "otherwise": "@props.css.wrapper"
+    },
+    "dataset": {
+      "status": "active"
+    },
+    "children": {
+      "div": {
+        "text": ""
+      }
+    }
+  }
+}

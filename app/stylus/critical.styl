@@ -1,0 +1,391 @@
+@import "skeleton.styl";
+@import "normalize.css";
+
+// base
+html, body
+  box-sizing border-box
+  text-size-adjust 100%
+  font-family texts.defaultFontFamily
+  font-size 16px
+  line-height 1.3
+
+*, *:before, *:after
+  box-sizing inherit
+
+.text-bold
+  font-weight bold
+
+.text-italic
+  font-style italic
+
+h1
+  title heading1
+
+h2
+  title heading2
+
+h3
+  title heading3
+
+h4
+  title heading4
+
+h5
+  title heading5
+
+h6
+  title heading6
+
+h1, h2, h3, h4, h5, h6, p
+  margin 0
+
+p
+  line-height: 1.5
+
+svg
+  width: 12px
+  height 12px
+
+:global
+  .element-blur
+    element-blur()
+
+:global
+  .press-effect-scale
+    apply-press-effect-scale()
+
+:global
+  @media print
+    .no-print
+    .no-print *
+      display none !important
+
+input[data-required="yes"], select[data-required="yes"], [data-native="select"][data-required="yes"], textarea[data-required="yes"]
+  input-required-mark()
+
+select[data-required="yes"], [data-native="select"][data-required="yes"]
+  background-position: top 4px right 12px // because there are up and down arrows
+
+// forbid selecting text on draggable elements
+[draggable]
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -khtml-user-drag: element;
+  -webkit-user-drag: element
+
+input, select, textarea, [data-native="select"]
+  font-size 1rem
+  line-height: 1
+  padding 4px 4px 4px 8px
+  border-radius: 4px
+
+label, .label
+  display inline-block
+  font-size 1rem
+  line-height: 1.15
+  text-align: left
+  margin 0 0 4px 0
+  font-size 0.9rem
+  line-height: 1
+  color #999
+
+select, [data-native="select"]
+  background-color: white
+  border 1px solid #ddd
+  height 32px
+  min-height: 32px
+  max-height: 32px
+  margin 0
+  &:focus, &:active
+    outline: none
+    border 1px solid colors.primary
+
+[data-native="select"]
+  overflow: hidden
+  background-repeat: no-repeat
+  background-position: top 7px right 4px
+  background-size: 8px 16px
+  background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15.182 32.346' width='7.5' height='16'><polygon points='15.182 13.165 0 13.165 7.644 0 15.182 13.165' fill-rule='evenodd'/><polygon points='15.182 19.182 0 19.182 7.644 32.346 15.182 19.182' fill-rule='evenodd'/></svg>")
+  line-height: 22px
+  wraptext()
+
+[data-type="selection-list"]
+  margin 0
+  padding 0
+  display flex
+  flex-direction: column
+  overflow-y: scroll
+  height: inherit
+  background-color: white
+  width 100%
+  li
+    display flex
+    align-items: center
+    list-style-type: none
+    height 32px
+    min-height 32px
+    max-height 32px
+    background-color: white
+    cursor pointer
+    font-size 1rem
+    padding-left 12px
+    background-repeat: no-repeat
+    background-position: center left
+    background-size: 7.7px 6px
+  li[data-selected="y"]
+    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15.451 12' width='7.7' height='6'><path d='M13.534.378,6.009,9.141l-4.063-4.3C.929,3.762-.693,5.388.322,6.463l4.914,5.2a1.157,1.157,0,0,0,1.624,0L15.158,2C16.117.886,14.5-.746,13.534.378Z'/></svg>")
+
+input
+  outline none
+  border 1px solid #ddd
+  height: 32px
+  min-height 32px
+  max-height 32px
+  padding-left 8px
+  transition: border-color 0.3s ease
+  color black
+  margin 0
+  &:focus, &:active
+    outline: none
+    border 1px solid colors.primary
+
+[data-input-status="error"]
+  color colors.error
+
+textarea
+  outline none
+  border 1px solid #ddd
+  transition: border-color 0.3s ease
+  color black
+  margin 0
+  &:focus, &:active
+    outline: none
+    border 1px solid colors.primary
+
+[data-native="checkbox"]
+  cursor: pointer
+
+[data-checkbox-ui="wrapper"]
+  width 64px
+  height 32px
+  border-radius: 15px
+  background-color: #ddd
+  [data-checkbox-ui="switch"]
+    width 28px
+    height: 28px
+    border-radius: 50%
+    background-color: white
+    box-shadow -4px 0px 4px rgba(0,0,0,0.2)
+    transform: translateY(2px) translateX(2px)
+    transition: all 0.3s ease
+
+[data-checkbox-status="on"]
+  [data-checkbox-ui="wrapper"]
+    background-color: green
+    [data-checkbox-ui="switch"]
+      transform: translateY(2px) translateX(34px)
+
+[data-checkbox-status="off"]
+  [data-checkbox-ui="wrapper"]
+    background-color: #ddd
+    [data-checkbox-ui="switch"]
+      transform: translateY(2px) translateX(2px)
+
+[data-type="checkbox-group"]
+  display flex
+  flex-direction: column
+  [data-checkbox-group-ui="item"]
+    display flex
+    align-items: center
+    background-repeat: no-repeat
+    background-position: 8px center
+    line-height: 1.2
+    border-radius: 4px
+    border 1px solid #f5f5f5
+    padding 16px 16px 16px 36px
+    margin-bottom 2px
+    cursor pointer
+    &[data-checkbox-group-item-checked="1"]
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' width='20' height='20'><path d='M10,20A10,10,0,1,1,20,10,10.011,10.011,0,0,1,10,20ZM10,1.25A8.75,8.75,0,1,0,18.75,10,8.76,8.76,0,0,0,10,1.25Z'/><path d='M9.062,13.333a.617.617,0,0,1-.441-.183L5.912,10.442A.626.626,0,0,1,6.8,9.557l2.266,2.267,4.975-4.975a.625.625,0,0,1,.884.884L9.506,13.15A.625.625,0,0,1,9.062,13.333Z'/></svg>")
+    &[data-checkbox-group-item-checked="0"]
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' width='20' height='20'><path d='M10,20A10,10,0,1,1,20,10,10.011,10.011,0,0,1,10,20ZM10,1.25A8.75,8.75,0,1,0,18.75,10,8.76,8.76,0,0,0,10,1.25Z'/></svg>")
+    &:last-child
+      margin-bottom 0
+    svg
+      height 24px
+      width auto
+      flex-shrink: 0
+      margin-right 4px
+
+[data-type="popneat"]
+  position fixed
+  display block
+  top 0
+  left 0
+  right 0
+  bottom 0
+  background-color: rgba(0,0,0,0.1)
+  width 100%
+  height 100%
+  &[data-popneat-status="hidden"]
+    display none
+  &[data-popneat-status="visible"]
+    display block
+  > div
+    position fixed
+    display flex
+    flex-direction: column
+    overflow-y: scroll
+    background-color: white
+    border-radius: 16px
+    box-shadow 0px 8px 16px rgba(0,0,0,0.1)
+    padding 16px
+  [data-popneat-ui="closebar"]
+    display flex
+    justify-content: flex-end
+    align-items: center
+    height 16px
+    svg
+      height 16px
+      width auto
+  [data-popneat-ui="content"]
+    padding 8px
+
+@keyframes :global(contentLoadingAnim) {
+  0% {
+    filter: opacity(1)
+  }
+  50% {
+    filter: opacity(0.5)
+  }
+  100% {
+    filter: opacity(1)
+  }
+}
+
+:global
+  [data-type="content-loading"]
+    display flex
+    padding 8px
+    animation: contentLoadingAnim 1.2s ease-in-out infinite
+    [data-content-loading="image"]
+      width 75px
+      height 75px
+      flex 75px 0 0
+      background-color #f5f5f5
+      border-radius 4px
+      margin-right 8px
+    [data-content-loading="texts"]
+      flex-grow: 1
+      display flex
+      flex-direction column
+      [data-content-loading="text"]
+        background-color: #f5f5f5
+        width 100%
+        height 16px
+        margin-bottom 8px
+        &:first-child
+          width 75%
+          height 24px
+
+.rounded
+  border-radius 4px
+
+.tooltip-error
+  color white
+  max-width 300px
+  border-radius: 4px
+  padding 6px 8px
+  font-size 14px
+  arrow-please(bottom, colors.error)
+
+// loading bar
+@keyframes :global(loadingBarAnim) {
+  0% {
+    left -100%
+  }
+
+  60% {
+    opacity: 1
+    left 0
+  }
+
+  100% {
+    opacity: 0
+    left 100%
+  }
+}
+
+:global
+  .loading-bar-wrapper
+    position absolute
+    top 0
+    left 0
+    right 0
+    height 4px
+    display block
+    overflow: hidden
+    z-index: 100001
+
+  .loading-bar-inner
+    position: fixed
+    top: 0
+    left -100%
+    opacity 0
+    height: 4px
+    width: 100%
+    background-color colors.success
+    animation loadingBarAnim 1.2s ease-in-out infinite
+
+  .loading-bar-disabled
+    animation: none
+    display none
+
+// loading view
+@keyframes :global(loadingViewAnim) {
+  0% {
+    background-color: #f5f5f5
+  }
+  50% {
+    background-color: #ffffff
+  }
+  100% {
+    background-color: #f5f5f5
+  }
+}
+
+:global
+  .loading-view-wrapper
+    position: fixed
+    top 0
+    bottom 0
+    left 0
+    right 0
+    z-index: 100000
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5
+    animation: loadingViewAnim 1.2s ease-in-out infinite
+
+  .loading-view-inner
+    display flex
+    flex-direction: column
+    align-items: center
+    img
+      margin-bottom 24px
+      filter opacity(0.25)
+    .message
+      font-size 1rem
+
+  .loading-view-failed
+    animation: none
+    background-color: #fff
+    .inner
+      color colors.error
+
+  .loading-view-disabled
+    animation: none
+    display none

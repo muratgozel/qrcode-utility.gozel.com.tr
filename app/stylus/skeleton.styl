@@ -1,0 +1,197 @@
+/*
+ * responsive utilities
+ * there are no breakpoints. breakpoint is what you specify based on a component:
+ *   +below(544px)
+ *     width 100%
+ * common breakpoints for reference: 544 - 768 - 1012 - 1280
+ */
+below(bp)
+  @media all and (max-width: bp)
+    {block}
+
+above(bp)
+  @media all and (min-width: bp)
+    {block}
+
+between(bp1, bp2)
+  @media all and (min-width: bp1) and (max-width: bp2)
+    {block}
+
+/*
+ *  color definitions
+ *  usage is simple: colors.error
+ *  similar tonnes can easily be generated with stylus builtins:
+ *  lighten(colors.primary, 10%) darken(colors.primary, 20%)
+ */
+colors = {
+  // social media
+  facebook: #3b5998,
+  twitter: #1da1f2,
+  linkedin: #0077b5,
+  youtube: #ff0000,
+  instagram: #000,
+  // thematic
+  error: #ed1c24,
+  danger: #ed1c24,
+  success: #00a900,
+  info: #007ec7,
+  warning: #a99c00,
+  black: #000000,
+  white: #ffffff,
+  // branding
+  primary: #434345,
+  secondary: #f5f5f5
+}
+
+/*
+ * text base definitions
+ */
+texts = {
+  defaultFontFamily: system-ui\, -apple-system\, BlinkMacSystemFont\, "Segoe UI"\, Roboto\, Ubuntu\, "Helvetica Neue"\, sans-serif,
+  sizes: {
+    heading1: 40px,
+    heading2: 32px,
+    heading3: 26px,
+    heading4: 22px,
+    heading5: 18px,
+    heading6: 16px,
+    paragraph: 16px,
+    xlarge: 20px,
+    large: 18px,
+    normal: 16px,
+    small: 14px,
+    xsmall: 12px
+  }
+}
+
+// generate titles
+title(k)
+  font-size texts.sizes[k]
+  font-weight bold
+  line-height 1.3
+
+// a beautiful press effect
+apply-press-effect-scale()
+  display inline-block
+  transition 200ms cubic-bezier(.08,.52,.52,1) transform
+  &:active
+    transform scale(0.98)
+
+// wraps long texts to one line
+wraptext(maxw=initial)
+  max-width maxw
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+
+// easy linear gradient function
+gradient-linear($startColor, $endColor)
+	background $startColor
+	background -moz-linear-gradient(top, $startColor 0%, $endColor 100%)
+	background -webkit-gradient(linear, left top, left bottom, color-stop(0%, $startColor), color-stop(100%, $endColor))
+	background -webkit-linear-gradient(top, $startColor 0%, $endColor 100%)
+	background -o-linear-gradient(top, $startColor 0%, $endColor 100%)
+	background -ms-linear-gradient(top, $startColor 0%, $endColor 100%)
+	background linear-gradient(to bottom, $startColor 0%, $endColor 100%)
+	filter unquote("progid:DXImageTransform.Microsoft.gradient(startColorstr='" + $startColor + "', endColorstr='" + $endColor + "', GradientType = 0)")
+
+element-blur()
+  -webkit-filter: blur(3px)
+  -moz-filter: blur(3px)
+  -ms-filter: blur(3px)
+  -o-filter: blur(3px)
+  filter: url("data:image/svg+xml;utf8,<svg height='0' xmlns='http://www.w3.org/2000/svg'><filter id='svgBlur' x='-5%' y='-5%' width='110%' height='110%'><feGaussianBlur in='SourceGraphic' stdDeviation='5'/></filter></svg>#svgBlur")
+  filter: "progid: DXImageTransform.Microsoft.Blur(PixelRadius = '3')"
+  filter: blur(3px)
+
+input-required-mark()
+  background-repeat: no-repeat
+  background-position: top 4px right 4px
+  background-size: 10px 10px
+  background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 10 10' width='10' height='10'><path fill='rgba(229,54,47,1)' opacity='0.25' d='M5.556,3.187c0,.26.149.322.333.138L7.754,1.46a.556.556,0,0,1,.786.786L6.675,4.111c-.184.184-.122.333.138.333H9.451a.556.556,0,0,1,0,1.112H6.813c-.26,0-.322.149-.138.333L8.54,7.754a.556.556,0,0,1-.786.786L5.889,6.675c-.184-.184-.333-.122-.333.138V9.451a.556.556,0,0,1-1.112,0V6.813c0-.26-.149-.322-.333-.138L2.246,8.54a.556.556,0,0,1-.786-.786L3.325,5.889c.184-.184.122-.333-.138-.333H.549a.556.556,0,0,1,0-1.112H3.187c.26,0,.322-.149.138-.333L1.46,2.246a.556.556,0,0,1,.786-.786L4.111,3.325c.184.184.333.122.333-.138V.549a.556.556,0,0,1,1.112,0Z' /></svg>")
+
+arrow-please(pos=bottom, bgcolor=black)
+  position relative
+  background-color bgcolor
+  &:after
+    content " "
+    height 0
+    width 0
+    position absolute
+    pointer-events: none
+    border-style solid
+    border-color transparent
+    if pos == bottom
+      top 100%
+      left 50%
+      margin-left -12px
+      border-width: 12px
+      border-top-color bgcolor
+    else if pos == left
+      right 100%
+      top 50%
+      margin-top -12px
+      border-right-color bgcolor
+    else if pos == top
+      bottom 100%
+      left 50%
+      border-bottom-color bgcolor
+      margin-left -12px
+    else if pos == right
+      left 100%
+      top 50%
+      border-left-color bgcolor
+      margin-top -12px
+
+create-button()
+  border none
+  border-radius 4px
+  outline none
+  line-height 1
+  font-weight bold
+  text-align center
+  text-decoration none
+  cursor pointer
+  transition all 0.3s ease
+  apply-press-effect-scale()
+  if size == xs
+    padding 4px 8px
+    font-size texts.sizes.xsmall
+  else if size == s
+    padding 6px 12px
+    font-size texts.sizes.small
+  else if size == m
+    padding 8px 16px
+    font-size texts.sizes.normal
+  else if size == l
+    padding 10px 20px
+    font-size texts.sizes.large
+  else if size == xl
+    padding 12px 24px
+    font-size texts.sizes.xlarge
+  else
+    padding 8px 16px
+    font-size texts.sizes.normal
+
+create-iconic-button()
+  create-button()
+  svg
+    width auto
+    if size == xs
+      height 9px
+      margin-right 3px
+    else if size == s
+      height 10px
+      margin-right 4px
+    else if size == m
+      height 12px
+      margin-right 6px
+    else if size == l
+      height 14px
+      margin-right 7px
+    else if size == xl
+      height 15px
+      margin-right 8px
+    else
+      height 12px
+      margin-right 6px

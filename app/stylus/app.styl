@@ -1,0 +1,266 @@
+@import "skeleton.styl";
+
+html, body
+  background-color #fff
+  margin 0
+  padding 0
+  font-size 1rem
+
+p
+  line-height: 1.35
+
+a
+  color colors.primary
+  text-decoration: none
+
+a:hover
+  text-decoration: underline
+
+@font-face
+  font-family CDNNY
+  font-style normal
+  font-weight: 400
+  src url(https://cdn.gozel.com.tr/fonts/ny/ny-regular.f39dd78416a9.woff2) format("woff2"), url(https://cdn.gozel.com.tr/fonts/ny/ny-regular.85f4048629f3.woff) format("woff")
+
+@font-face
+  font-family CDNNY
+  font-style normal
+  font-weight: 700
+  src url(https://cdn.gozel.com.tr/fonts/ny/ny-bold.9da6ff479609.woff2) format("woff2"), url(https://cdn.gozel.com.tr/fonts/ny/ny-bold.aa21d3242aec.woff) format("woff")
+
+@font-face
+  font-family CDNNY
+  font-style normal
+  font-weight: 900
+  src url(https://cdn.gozel.com.tr/fonts/ny/ny-black.bdfa02b0257f.woff2) format("woff2"), url(https://cdn.gozel.com.tr/fonts/ny/ny-black.14d5713936b2.woff) format("woff")
+
+@media print
+  .no-print
+  .no-print *
+    display none !important
+
+body[data-fonts="ready"]
+  font-family: CDNNY
+  font-weight: 400
+
+.app
+  position: relative
+
+.router
+  position relative
+
+.header
+  display flex
+  justify-content: space-between
+  align-items center
+  padding 1rem 2rem !important
+  border-bottom 4px solid lighten(colors.primary, 95%)
+  .left
+    display flex
+    justify-content: flex-start
+    align-items: center
+    .logo-link
+      padding-top 0
+    .app-name
+      display flex
+      flex-direction: column
+      margin-left 1rem
+      h1
+        font-size 2rem
+      +below(768px)
+        h1
+          font-size 1.4rem
+        span
+          display none
+      +below(400px)
+        h1
+          display none
+  .right
+    display flex
+    align-items center
+    .burger-menu-link
+      padding 0.5rem
+      apply-press-effect-scale()
+      svg
+        fill colors.primary
+        height 30px
+        width auto
+        transition all 0.3s ease
+      &:hover svg
+        fill colors.third
+
+.burger-menu
+  position: absolute
+  left: 0
+  right 0
+  top 99px
+  display flex
+  flex-direction: column
+  padding 2rem !important
+  border-top: 1px solid lighten(colors.primary, 95%)
+  border-bottom: 1px solid lighten(colors.primary, 95%)
+  background-color: white
+  z-index -1
+  opacity 0
+  transition: all 0.3s ease
+  .section
+    display flex
+    flex-direction: column
+    margin-bottom 2rem
+    .heading
+      font-size 1.2rem
+      font-weight 700
+      color colors.primary
+      margin-bottom 0.5rem
+    .item
+      color black
+      padding 0.2rem 0.5rem
+      &:hover
+        color colors.third
+    &:last-child
+      margin-bottom 0
+
+.site-section
+  padding 0 2rem
+  max-width 1024px
+  margin 0 auto
+
+.introduction
+  padding-top 7rem
+  padding-bottom 7rem
+
+.footer
+  display flex
+  justify-content space-between
+  font-size 0.7rem
+  color gray
+  margin-top 1rem
+  padding-top 1rem
+  padding-bottom 1rem
+  border-top 4px solid #f5f5f5
+  .footer-left,
+  .footer-right
+    display flex
+    justify-content flex-start
+    align-items: center
+    a
+      display flex
+      align-items: center
+      margin-right 0.8rem
+      svg
+        height 16px
+        width 16px
+        margin 0 4px
+      &:last-child
+        margin-right 0
+
+.form-wrapper
+  margin-top 2rem
+  h3,
+  h4
+    margin-bottom 1rem
+    margin-top 1.5rem
+    &:first-child
+      margin-top 0
+
+.input-group
+  display flex
+  justify-content flex-start
+  align-items: flex-start
+  margin-bottom 0.5rem
+  .input
+    margin-right 0.5rem
+    &:last-child
+      margin-right 0
+  +below(768px)
+    flex-direction: column
+    align-items: flex-start
+    .input
+      margin-right 0
+      &:last-child
+        margin-bottom 0
+  +below(400px)
+    .input
+      width 100%
+  &.input-group-row
+    flex-direction: row
+    +below(768px)
+      .input
+        margin-right 0.5rem
+
+.input
+  display flex
+  flex-direction: column
+  align-items: flex-start
+  margin-bottom 0.5rem
+  input
+    width 300px
+    +below(400px)
+      width 100%
+    &.long-input
+      width 608px
+  input[type="radio"]
+    width 20px
+    height 20px
+    min-height 20px
+    max-height 20px
+  input[type="file"]
+    width: unset
+    padding 0
+    height unset
+    min-height unset
+    max-height unset
+    border none
+
+textarea
+  height 64px
+  width 300px
+  &.long-input
+    width: 608px
+
+label
+  font-weight 700
+
+input[name="start_time"],
+input[name="end_time"]
+  width 80px
+
+.form-actions
+  display flex
+  justify-content: space-between
+  margin-top 1rem
+  .form-actions-left
+    display flex
+    justify-content: flex-start
+    align-items: flex-start
+    > *
+      margin-right 8px
+    > a
+      create-button()
+      background-color: colors.primary
+      color white
+      &:hover
+        text-decoration: underline
+
+.qrcode-wrapper
+  display flex
+  flex-direction column
+  margin-bottom 2rem
+  .qrcode-vector
+    width 200px
+    height 200px
+    svg
+      width 200px
+      height 200px
+  .qrcode-actions
+    margin-top 1rem
+    display none
+    a
+      create-button()
+      background-color: colors.primary
+      color white
+      &:hover
+        text-decoration: underline
+  &[data-hascode="yes"]
+    .qrcode-actions
+      display flex

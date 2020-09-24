@@ -1,0 +1,44 @@
+# Translation of routes component into tr_TR.
+# This file created automatically by Monodrom, 2020
+msgid ""
+msgstr ""
+"Project-Id-Version: qrcode-utility.gozel.com.tr 20.9.1\n"
+"POT-Creation-Date: 2020-09-24T23:11:50.091Z\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#. This is a page title which is visible in search engines and social media sites. (Component: routes)
+msgid "Anasayfa"
+msgstr ""
+
+#. This is a page description which is visible in search engines and social media sites. (Component: routes)
+msgid "Oluşturmak istediğiniz karekod formatını seçin ve başlayın."
+msgstr ""
+
+#. This is a URL path name. If you are updating the existing translation be aware that the URL of the page will change and may cause your visitors to get "Not Found" errors when they try to access your pages over social media or other networks. (Component: routes)
+msgid "vcard"
+msgstr ""
+
+#. This is a page title which is visible in search engines and social media sites. (Component: routes)
+msgid "vCard Karekodu Oluştur"
+msgstr ""
+
+#. This is a page description which is visible in search engines and social media sites. (Component: routes)
+msgid "vCard formatındaki karekodu okuyan cihaz, size vCard içerisindeki kişi bilgilerini rehbere eklemek isteyip istemediğinizi sorar."
+msgstr ""
+
+#. This is a URL path name. If you are updating the existing translation be aware that the URL of the page will change and may cause your visitors to get "Not Found" errors when they try to access your pages over social media or other networks. (Component: routes)
+msgid "link"
+msgstr ""
+
+#. This is a page title which is visible in search engines and social media sites. (Component: routes)
+msgid "Link Karekodu Oluştur"
+msgstr ""
+
+#. This is a page description which is visible in search engines and social media sites. (Component: routes)
+msgid "Link karekodu, cihazın, belirtilen linke gitmek isteyip istemediğinize ilişkin bildirim göstermesine neden olur."
+msgstr ""
+
