@@ -1,7 +1,7 @@
 module.exports = {
   "runtime": {
     "pkgname": "qrcode-utility.gozel.com.tr",
-    "version": "20.9.1",
+    "version": "20.9.2",
     "env": "production",
     "name": "QR Code Utility",
     "description": "Generate a qr code in various formats.",

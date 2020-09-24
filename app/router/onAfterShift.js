@@ -19,7 +19,7 @@ module.exports = function onAfterShift(route, prevRoute) {
     title: Frond._(route.metadata.title, 'routes'),
     description: Frond._(route.metadata.description, 'routes'),
     url: url + route.fullpath,
-    image: objectkit.getProp(route.metadata, 'image'),
+    image: '{{assets:img/social-media-cover.jpg}}',
     locale: Frond.config('locale'),
     localVersions: localVersions
   })
